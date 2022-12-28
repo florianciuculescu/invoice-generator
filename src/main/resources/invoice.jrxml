@@ -65,11 +65,11 @@
     <parameter name="numarContract" class="java.lang.String"/>
     <parameter name="contractDinDataDe" class="java.lang.String"/>
     <parameter name="cantitate" class="java.lang.String"/>
-    <parameter name="pretPerUnitate" class="java.lang.Double"/>
-    <parameter name="valoare" class="java.lang.Double"/>
+    <parameter name="pretPerUnitate" class="java.lang.String"/>
+    <parameter name="valoare" class="java.lang.String"/>
     <parameter name="numarFactura" class="java.lang.String"/>
-    <parameter name="dataEmitere" class="java.util.Date"/>
-    <parameter name="dataScadenta" class="java.util.Date"/>
+    <parameter name="dataEmitere" class="java.lang.String"/>
+    <parameter name="dataScadenta" class="java.lang.String"/>
     <parameter name="numeClient" class="java.lang.String"/>
     <parameter name="nrRegistruClient" class="java.lang.String"/>
     <queryString>
@@ -137,7 +137,7 @@
             </staticText>
             <textField pattern="EEEEE dd MMMMM yyyy">
                 <reportElement x="460" y="40" width="84" height="20" uuid="e69dc343-a844-4f37-8527-dee2c896436e"/>
-                <textFieldExpression><![CDATA[new SimpleDateFormat("dd.MM.yyyy").format( $P{dataEmitere} )]]></textFieldExpression>
+                <textFieldExpression><![CDATA[$P{dataEmitere}]]></textFieldExpression>
             </textField>
             <staticText>
                 <reportElement x="385" y="60" width="80" height="20" uuid="8f67e3b6-a7ed-4152-b28d-586f8e9a38c8"/>
@@ -147,7 +147,7 @@
             </staticText>
             <textField pattern="EEEEE dd MMMMM yyyy">
                 <reportElement x="460" y="60" width="84" height="20" uuid="851f3679-ffab-445c-b497-7d24db10b469"/>
-                <textFieldExpression><![CDATA[new SimpleDateFormat("dd.MM.yyyy").format( $P{dataScadenta} )]]></textFieldExpression>
+                <textFieldExpression><![CDATA[$P{dataScadenta}]]></textFieldExpression>
             </textField>
             <staticText>
                 <reportElement x="0" y="160" width="84" height="15" uuid="de2a509a-eed0-477e-8b4b-e7ed8455fc2a"/>
@@ -180,7 +180,7 @@
                 <textFieldExpression><![CDATA[$P{nrRegistruClient}]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement x="316" y="145" width="120" height="15" uuid="27809e95-0312-4369-80ac-f76ae12b2a88"/>
+                <reportElement x="320" y="145" width="120" height="15" uuid="27809e95-0312-4369-80ac-f76ae12b2a88"/>
                 <textFieldExpression><![CDATA[$P{cuiClient}]]></textFieldExpression>
             </textField>
             <textField>
@@ -243,7 +243,7 @@ Strada VASILE ALECSANDRI, Nr. 1D, Camera 1, Judetul Ilfov]]></text>
                 <text><![CDATA[Nr. registru:]]></text>
             </staticText>
             <staticText>
-                <reportElement x="295" y="145" width="20" height="15" uuid="6d8a741d-7b5f-4822-8a77-e47deb3c749b"/>
+                <reportElement x="295" y="145" width="25" height="15" uuid="6d8a741d-7b5f-4822-8a77-e47deb3c749b"/>
                 <text><![CDATA[CUI:]]></text>
             </staticText>
             <staticText>
@@ -253,9 +253,9 @@ Strada VASILE ALECSANDRI, Nr. 1D, Camera 1, Judetul Ilfov]]></text>
         </band>
     </title>
     <columnHeader>
-        <band height="90">
+        <band height="58">
             <rectangle>
-                <reportElement x="0" y="0" width="556" height="18" forecolor="#000000" backcolor="#0A0909" uuid="17941a71-cdff-4f73-8f6e-ba66364c748b"/>
+                <reportElement x="0" y="0" width="555" height="18" forecolor="#000000" backcolor="#0A0909" uuid="17941a71-cdff-4f73-8f6e-ba66364c748b"/>
             </rectangle>
             <staticText>
                 <reportElement positionType="FixRelativeToBottom" x="0" y="0" width="112" height="18" forecolor="#FFFFFF" uuid="540a2bc3-b745-42b7-85c6-8240ead47644"/>
@@ -269,11 +269,11 @@ Strada VASILE ALECSANDRI, Nr. 1D, Camera 1, Judetul Ilfov]]></text>
                 <textFieldExpression><![CDATA[$P{numarContract}]]></textFieldExpression>
             </textField>
             <staticText>
-                <reportElement positionType="FixRelativeToBottom" x="241" y="0" width="314" height="18" forecolor="#FFFFFF" uuid="d47bbabe-ea76-4f35-9059-305f1460b0c4"/>
-                <textElement verticalAlignment="Middle">
+                <reportElement positionType="FixRelativeToBottom" x="518" y="0" width="37" height="18" forecolor="#FFFFFF" uuid="d47bbabe-ea76-4f35-9059-305f1460b0c4"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
                     <font isBold="true"/>
                 </textElement>
-                <text><![CDATA[Cantitate | Unitate De Masura | Pret Per Unitate | Valoarea | Valuta]]></text>
+                <text><![CDATA[Valuta]]></text>
             </staticText>
             <textField>
                 <reportElement x="80" y="45" width="120" height="13" uuid="26085466-d588-4daa-a9f7-c3187b2d69bc"/>
@@ -296,29 +296,87 @@ Strada VASILE ALECSANDRI, Nr. 1D, Camera 1, Judetul Ilfov]]></text>
                 <textFieldExpression><![CDATA[$P{contractDinDataDe}]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement x="241" y="20" width="47" height="38" uuid="ee2c9dff-7d96-4d9d-a4a4-b0283588bd74"/>
+                <reportElement x="270" y="20" width="50" height="38" uuid="ee2c9dff-7d96-4d9d-a4a4-b0283588bd74"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle"/>
                 <textFieldExpression><![CDATA[$P{cantitate}]]></textFieldExpression>
             </textField>
             <staticText>
-                <reportElement x="289" y="20" width="92" height="38" uuid="fe8899d8-4279-4ac7-8d9b-5b05d43d5036"/>
+                <reportElement x="321" y="20" width="68" height="38" uuid="fe8899d8-4279-4ac7-8d9b-5b05d43d5036"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle"/>
-                <text><![CDATA[ore]]></text>
+                <text><![CDATA[ora]]></text>
             </staticText>
             <textField>
-                <reportElement x="387" y="20" width="76" height="38" uuid="9d35ff6c-2e13-4c10-97a0-f9a0cba9c938"/>
+                <reportElement x="390" y="20" width="67" height="38" uuid="9d35ff6c-2e13-4c10-97a0-f9a0cba9c938"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle"/>
                 <textFieldExpression><![CDATA[$P{pretPerUnitate}]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement x="466" y="20" width="51" height="38" uuid="21471669-d482-4730-8005-1d8ca0170e39"/>
+                <reportElement x="458" y="20" width="59" height="38" uuid="21471669-d482-4730-8005-1d8ca0170e39"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle"/>
                 <textFieldExpression><![CDATA[$P{valoare}]]></textFieldExpression>
             </textField>
             <staticText>
-                <reportElement x="517" y="20" width="39" height="38" uuid="5805e3f6-bd0e-41db-bd61-bb290c2118f9"/>
+                <reportElement x="518" y="20" width="37" height="38" uuid="5805e3f6-bd0e-41db-bd61-bb290c2118f9"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle"/>
                 <text><![CDATA[lei]]></text>
+            </staticText>
+            <line>
+                <reportElement x="320" y="22" width="1" height="36" uuid="147af9dd-eb45-4c94-9c8c-2f543bcdff95"/>
+            </line>
+            <line>
+                <reportElement x="389" y="22" width="1" height="36" uuid="c10dafce-e581-4d39-accb-5ea61038e777"/>
+            </line>
+            <line>
+                <reportElement x="457" y="22" width="1" height="36" uuid="2d975736-0328-4aac-8aad-dfbb1e8d7631"/>
+            </line>
+            <line>
+                <reportElement x="517" y="22" width="1" height="36" uuid="45d9419f-80b7-441e-b3f2-c7d2cbbdd996"/>
+            </line>
+            <line>
+                <reportElement x="269" y="22" width="1" height="36" uuid="e08a9a63-6676-48d7-be36-71e2d9b534b9"/>
+            </line>
+            <line>
+                <reportElement mode="Transparent" x="269" y="2" width="1" height="15" forecolor="#FCFCFC" uuid="5376f901-7164-4105-956d-fbe737c6c59f"/>
+            </line>
+            <line>
+                <reportElement mode="Transparent" x="320" y="2" width="1" height="15" forecolor="#FCFCFC" uuid="a17d75cf-0d80-4465-9c69-32feded1b94b"/>
+            </line>
+            <line>
+                <reportElement mode="Transparent" x="389" y="2" width="1" height="15" forecolor="#FCFCFC" uuid="5c21b423-86e3-4feb-9ca3-9c6f47566ae2"/>
+            </line>
+            <line>
+                <reportElement mode="Transparent" x="457" y="2" width="1" height="15" forecolor="#FCFCFC" uuid="e9212c42-932d-44f7-93d8-c0d3a0e1705e"/>
+            </line>
+            <line>
+                <reportElement mode="Transparent" x="517" y="2" width="1" height="15" forecolor="#FCFCFC" uuid="d4983303-2882-4bdc-bf3f-6f3990b287a5"/>
+            </line>
+            <staticText>
+                <reportElement positionType="FixRelativeToBottom" x="458" y="0" width="59" height="18" forecolor="#FFFFFF" uuid="cc0155ea-c167-42b6-898d-e37527c061fb"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Valoare]]></text>
+            </staticText>
+            <staticText>
+                <reportElement positionType="FixRelativeToBottom" x="390" y="0" width="67" height="18" forecolor="#FFFFFF" uuid="49bc2ebd-fec7-48d7-a427-3b649cb1841c"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Pret / Unitate]]></text>
+            </staticText>
+            <staticText>
+                <reportElement positionType="FixRelativeToBottom" x="321" y="0" width="68" height="18" forecolor="#FFFFFF" uuid="8c65475d-6e82-4395-9d87-eaa0e59e1f5e"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Unit. Masura]]></text>
+            </staticText>
+            <staticText>
+                <reportElement positionType="FixRelativeToBottom" x="270" y="0" width="49" height="18" forecolor="#FFFFFF" uuid="9bef2436-4820-49f1-8a1d-2af58930fb60"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Cantitate]]></text>
             </staticText>
         </band>
     </columnHeader>

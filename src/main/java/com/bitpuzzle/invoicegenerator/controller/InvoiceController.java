@@ -1,61 +1,56 @@
 package com.bitpuzzle.invoicegenerator.controller;
 
+import com.bitpuzzle.invoicegenerator.model.Client;
+import com.bitpuzzle.invoicegenerator.model.Invoice;
+import com.bitpuzzle.invoicegenerator.service.InvoiceService;
+import lombok.RequiredArgsConstructor;
 import net.sf.jasperreports.engine.*;
-import org.springframework.util.ResourceUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
-@RestController
+@Controller
+@RequiredArgsConstructor(onConstructor_ = @Autowired)
 public class InvoiceController {
 
-    @GetMapping("/invoice")
-    public void createInvoice() throws FileNotFoundException, JRException {
+    public final InvoiceService invoiceService;
 
-        String path = "C:\\Users\\CiuculeF\\Desktop\\personal";
-        //load file and compile it
-        File file = ResourceUtils.getFile("classpath:invoice.jrxml");
-        JasperReport jasperReport = JasperCompileManager.compileReport(file.getAbsolutePath());
-        Map<String, Object> parameters = new HashMap<>();
+    @GetMapping("/")
+    public String showForm(Model model) {
+        Invoice invoice = new Invoice();
+        model.addAttribute("invoice", invoice);
 
-        LocalDate localDateNow = LocalDate.now();
-        LocalDate dataScadenta = LocalDate.of(2022,12,15);
+        // mocking db retrieval
+        List<Client> clientList = Arrays.asList(getHCLClient());
+        model.addAttribute("clientList", clientList);
+        return "index.html";
+    }
 
-        parameters.put("numarFactura", "2");
-        parameters.put("dataEmitere", Date.from(localDateNow.atStartOfDay(ZoneId.systemDefault()).toInstant()));
-        parameters.put("dataScadenta", Date.from(dataScadenta.atStartOfDay(ZoneId.systemDefault()).toInstant()));
+    @PostMapping("/generate")
+    public String generateInvoice(@ModelAttribute("invoice") Invoice invoice) throws JRException, FileNotFoundException {
+        invoiceService.generateInvoice(invoice);
+        return "generated";
+    }
 
-
-        parameters.put("numeClient", "HCL TECHNOLOGIES ROMANIA S.R.L");
-        parameters.put("nrRegistruClient", "J40/6349/2009");
-        parameters.put("cuiClient", "RO 25612455");
-        parameters.put("bancaClient", "Citi Bank");
-        parameters.put("nrContClient", "RO84CITI0000000724623018");
-        parameters.put("adresaClient", "11 Uruguay str., 2nd floor, Desk 21," +
-                " 1st District, Bucharest, Romania, Romania");
-
-        parameters.put("numarContract", "134");
-        parameters.put("contractDinDataDe", "06.10.2022");
-        parameters.put("perioadaServicii", "01-12-2022 - 22-12-2022");
-
-        Double pretPerUnitate = 171.633;
-        Double valoare = 20595.960;
-
-        parameters.put("cantitate", "120");
-        parameters.put("pretPerUnitate", pretPerUnitate);
-        parameters.put("valoare", valoare);
-
-
-        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, new JREmptyDataSource());
-
-        JasperExportManager.exportReportToPdfFile(jasperPrint, path + "\\invoice.pdf");
-
+    private Client getHCLClient() {
+        return Client.builder()
+                .clientId(1L)
+                .displayName("HCL")
+                .numeClient("HCL TECHNOLOGIES ROMANIA S.R.L")
+                .nrRegistruClient("J40/6349/2009")
+                .cuiClient("RO 25612455")
+                .bancaClient("Citi Bank")
+                .nrContClient("RO84CITI0000000724623018")
+                .adresaClient("11 Uruguay str., 2nd floor, Desk 21, 1st District, Bucharest, Romania, Romania")
+                .numarContract("134")
+                .contractDinDataDe("06.10.2022")
+                .pretPerUnitate(171.633)
+                .build();
     }
 }
