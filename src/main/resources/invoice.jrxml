@@ -107,7 +107,7 @@
             </staticText>
             <image hAlign="Center">
                 <reportElement x="0" y="0" width="84" height="70" uuid="94883631-a913-43e2-b182-ab8d77d0181e"/>
-                <imageExpression><![CDATA["C:/Users/CiuculeF/Desktop/LogoMakr-4BaeUO.png"]]></imageExpression>
+                <imageExpression><![CDATA["src/main/resources/static/images/LogoMakr.png"]]></imageExpression>
             </image>
             <textField pattern="EEEEE dd MMMMM yyyy">
                 <reportElement x="460" y="20" width="20" height="20" uuid="3836ce65-eca3-4cad-a6de-b1818def0a2b"/>
@@ -396,7 +396,7 @@ Strada VASILE ALECSANDRI, Nr. 1D, Camera 1, Judetul Ilfov]]></text>
             </staticText>
             <image hAlign="Center">
                 <reportElement x="0" y="32" width="150" height="77" uuid="cb6c6abd-f54b-472d-a8a6-7cedf8d1a9dd"/>
-                <imageExpression><![CDATA["C:/Users/CiuculeF/Desktop/signature.png"]]></imageExpression>
+                <imageExpression><![CDATA["src/main/resources/static/images/signature.png"]]></imageExpression>
             </image>
             <staticText>
                 <reportElement x="0" y="9" width="150" height="23" uuid="2a4da55a-1ece-4d76-b454-e3124801872e"/>
