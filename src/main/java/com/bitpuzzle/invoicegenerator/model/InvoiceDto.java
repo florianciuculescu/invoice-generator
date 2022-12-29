@@ -10,7 +10,7 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @ToString
-public class Invoice {
+public class InvoiceDto {
     private String numarFactura;
 
     @DateTimeFormat(pattern = "dd/MMM/yyyy")

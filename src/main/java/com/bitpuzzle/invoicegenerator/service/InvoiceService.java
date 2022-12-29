@@ -1,6 +1,6 @@
 package com.bitpuzzle.invoicegenerator.service;
 
-import com.bitpuzzle.invoicegenerator.model.Invoice;
+import com.bitpuzzle.invoicegenerator.model.InvoiceDto;
 import net.sf.jasperreports.engine.*;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ResourceUtils;
@@ -16,7 +16,7 @@ import java.util.Map;
 @Service
 public class InvoiceService {
 
-    public void generateInvoice(Invoice invoice) throws FileNotFoundException, JRException {
+    public void generateInvoice(InvoiceDto invoice) throws FileNotFoundException, JRException {
         String path = "C:\\Users\\CiuculeF\\Desktop\\personal";
         //load file and compile it
         File file = ResourceUtils.getFile("classpath:invoice.jrxml");

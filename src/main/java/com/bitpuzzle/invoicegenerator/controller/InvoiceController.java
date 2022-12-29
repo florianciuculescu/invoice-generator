@@ -1,7 +1,7 @@
 package com.bitpuzzle.invoicegenerator.controller;
 
 import com.bitpuzzle.invoicegenerator.model.Client;
-import com.bitpuzzle.invoicegenerator.model.Invoice;
+import com.bitpuzzle.invoicegenerator.model.InvoiceDto;
 import com.bitpuzzle.invoicegenerator.service.InvoiceService;
 import lombok.RequiredArgsConstructor;
 import net.sf.jasperreports.engine.*;
@@ -23,8 +23,8 @@ public class InvoiceController {
 
     @GetMapping("/")
     public String showForm(Model model) {
-        Invoice invoice = new Invoice();
-        model.addAttribute("invoice", invoice);
+        InvoiceDto invoiceDto = new InvoiceDto();
+        model.addAttribute("invoice", invoiceDto);
 
         // mocking db retrieval
         List<Client> clientList = Arrays.asList(getHCLClient());
@@ -33,8 +33,8 @@ public class InvoiceController {
     }
 
     @PostMapping("/generate")
-    public String generateInvoice(@ModelAttribute("invoice") Invoice invoice) throws JRException, FileNotFoundException {
-        invoiceService.generateInvoice(invoice);
+    public String generateInvoice(@ModelAttribute("invoice") InvoiceDto invoiceDto) throws JRException, FileNotFoundException {
+        invoiceService.generateInvoice(invoiceDto);
         return "generated";
     }
 
