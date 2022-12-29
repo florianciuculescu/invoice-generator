@@ -1,6 +1,6 @@
 package com.bitpuzzle.invoicegenerator.service;
 
-import com.bitpuzzle.invoicegenerator.model.InvoiceDto;
+import com.bitpuzzle.invoicegenerator.dto.InvoiceDto;
 import net.sf.jasperreports.engine.*;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ResourceUtils;

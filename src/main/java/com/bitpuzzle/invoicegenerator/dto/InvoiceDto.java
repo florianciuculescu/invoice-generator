@@ -1,5 +1,6 @@
-package com.bitpuzzle.invoicegenerator.model;
+package com.bitpuzzle.invoicegenerator.dto;
 
+import com.bitpuzzle.invoicegenerator.model.Client;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

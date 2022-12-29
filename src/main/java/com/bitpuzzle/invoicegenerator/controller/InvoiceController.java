@@ -1,7 +1,7 @@
 package com.bitpuzzle.invoicegenerator.controller;
 
 import com.bitpuzzle.invoicegenerator.model.Client;
-import com.bitpuzzle.invoicegenerator.model.InvoiceDto;
+import com.bitpuzzle.invoicegenerator.dto.InvoiceDto;
 import com.bitpuzzle.invoicegenerator.service.InvoiceService;
 import lombok.RequiredArgsConstructor;
 import net.sf.jasperreports.engine.*;
