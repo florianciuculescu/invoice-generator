@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="02" author="florian">
+        <insert tableName="clients">
+            <column name="id" valueNumeric="1"/>
+            <column name="display_name" value="HCL"/>
+            <column name="nume_client" value="HCL TECHNOLOGIES ROMANIA S.R.L"/>
+            <column name="nr_registru_client" value="J40/6349/2009"/>
+            <column name="cui_client" value="RO 25612455"/>
+            <column name="banca_client" value="Citi Bank"/>
+            <column name="nr_cont_client" value="RO84CITI0000000724623018"/>
+            <column name="adresa_client" value="11 Uruguay str., 2nd floor, Desk 21, 1st District, Bucharest, Romania, Romania"/>
+            <column name="numar_contract" value="134"/>
+            <column name="contract_din_data_de" value="06.10.2022"/>
+            <column name="pret_per_unitate" value="171.633"/>
+        </insert>
+
+    </changeSet>
+</databaseChangeLog>

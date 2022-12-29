@@ -45,7 +45,7 @@ public class InvoiceService {
         parameters.put("perioadaServicii", perioadaServicii);
 
         Integer cantitate = invoice.getCantitate();
-        Double pretPerUnitate = invoice.getClient().getPretPerUnitate();
+        Double pretPerUnitate = Double.valueOf(invoice.getClient().getPretPerUnitate());
 
         DecimalFormat decimalFormat = new DecimalFormat("0.00");
 
@@ -56,6 +56,6 @@ public class InvoiceService {
         parameters.put("valoare", valoare);
 
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, new JREmptyDataSource());
-        JasperExportManager.exportReportToPdfFile(jasperPrint, path + "\\invoice.pdf");
+        JasperExportManager.exportReportToPdfFile(jasperPrint, System.getProperty("user.home") + "\\Desktop" + "\\invoice.pdf");
     }
 }
