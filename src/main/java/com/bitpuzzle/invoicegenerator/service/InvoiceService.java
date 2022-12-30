@@ -16,8 +16,7 @@ import java.util.Map;
 @Service
 public class InvoiceService {
 
-    public void generateInvoice(InvoiceDto invoice) throws FileNotFoundException, JRException {
-        String path = "C:\\Users\\CiuculeF\\Desktop\\personal";
+    public void generateInvoice(InvoiceDto invoiceDto) throws FileNotFoundException, JRException {
         //load file and compile it
         File file = ResourceUtils.getFile("classpath:invoice.jrxml");
         JasperReport jasperReport = JasperCompileManager.compileReport(file.getAbsolutePath());
@@ -27,31 +26,31 @@ public class InvoiceService {
         String dataEmitere = LocalDate.now().format(df);
 
 
-        parameters.put("numarFactura", invoice.getNumarFactura());
+        parameters.put("numarFactura", invoiceDto.getNumarFactura());
         parameters.put("dataEmitere", dataEmitere);
-        parameters.put("dataScadenta", invoice.getDataScadenta().format(df));
-        parameters.put("numeClient", invoice.getClient().getNumeClient());
-        parameters.put("nrRegistruClient", invoice.getClient().getNrRegistruClient());
-        parameters.put("cuiClient", invoice.getClient().getCuiClient());
-        parameters.put("bancaClient", invoice.getClient().getBancaClient());
-        parameters.put("nrContClient", invoice.getClient().getNrContClient());
-        parameters.put("adresaClient", invoice.getClient().getAdresaClient());
-        parameters.put("numarContract", invoice.getClient().getNumarContract());
-        parameters.put("contractDinDataDe", invoice.getClient().getContractDinDataDe());
+        parameters.put("dataScadenta", invoiceDto.getDataScadenta().format(df));
+        parameters.put("numeClient", invoiceDto.getClientDto().getNumeClient());
+        parameters.put("nrRegistruClient", invoiceDto.getClientDto().getNrRegistruClient());
+        parameters.put("cuiClient", invoiceDto.getClientDto().getCuiClient());
+        parameters.put("bancaClient", invoiceDto.getClientDto().getBancaClient());
+        parameters.put("nrContClient", invoiceDto.getClientDto().getNrContClient());
+        parameters.put("adresaClient", invoiceDto.getClientDto().getAdresaClient());
+        parameters.put("numarContract", invoiceDto.getClientDto().getNumarContract());
+        parameters.put("contractDinDataDe", invoiceDto.getClientDto().getContractDinDataDe());
 
 
-        String perioadaServicii = invoice.getPerioadaServiciiStart().format(df) + " - " + invoice.getPerioadaServiciiEnd().format(df);
+        String perioadaServicii = invoiceDto.getPerioadaServiciiStart().format(df) + " - " + invoiceDto.getPerioadaServiciiEnd().format(df);
 
         parameters.put("perioadaServicii", perioadaServicii);
 
-        Integer cantitate = invoice.getCantitate();
-        Double pretPerUnitate = Double.valueOf(invoice.getClient().getPretPerUnitate());
+        Integer cantitate = invoiceDto.getCantitate();
+        Double pretPerUnitate = Double.valueOf(invoiceDto.getClientDto().getPretPerUnitate());
 
         DecimalFormat decimalFormat = new DecimalFormat("0.00");
 
         String valoare = String.valueOf( decimalFormat.format(cantitate * pretPerUnitate));
 
-        parameters.put("cantitate", String.valueOf(invoice.getCantitate()));
+        parameters.put("cantitate", String.valueOf(invoiceDto.getCantitate()));
         parameters.put("pretPerUnitate", String.valueOf(pretPerUnitate));
         parameters.put("valoare", valoare);
 

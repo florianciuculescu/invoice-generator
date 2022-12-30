@@ -1,6 +1,5 @@
 package com.bitpuzzle.invoicegenerator.dto;
 
-import com.bitpuzzle.invoicegenerator.model.Client;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -16,7 +15,7 @@ public class InvoiceDto {
 
     @DateTimeFormat(pattern = "dd/MMM/yyyy")
     private LocalDate dataScadenta;
-    private Client client;
+    private ClientDto clientDto;
     private LocalDate perioadaServiciiStart;
     private LocalDate perioadaServiciiEnd;
     private Integer cantitate;

@@ -1,5 +1,7 @@
 package com.bitpuzzle.invoicegenerator.controller;
 
+import com.bitpuzzle.invoicegenerator.dto.ClientDto;
+import com.bitpuzzle.invoicegenerator.mappers.ClientMapper;
 import com.bitpuzzle.invoicegenerator.model.Client;
 import com.bitpuzzle.invoicegenerator.dto.InvoiceDto;
 import com.bitpuzzle.invoicegenerator.service.ClientService;
@@ -22,15 +24,21 @@ public class InvoiceController {
 
     public final InvoiceService invoiceService;
     public final ClientService clientService;
+    public final ClientMapper clientMapper;
 
     @GetMapping("/")
     public String showForm(Model model) {
         InvoiceDto invoiceDto = new InvoiceDto();
-        model.addAttribute("invoice", invoiceDto);
+        model.addAttribute("invoiceDto", invoiceDto);
 
         List<Client> clientList = clientService.fetchClientsList();
-        model.addAttribute("clientList", clientList);
-        return "index2.html";
+
+        List<ClientDto> clientDtoList = clientList.stream()
+                .map(clientMapper::mapToClientDto)
+                .toList();
+
+        model.addAttribute("clientList", clientDtoList);
+        return "index.html";
     }
 
     @PostMapping("/generate")
