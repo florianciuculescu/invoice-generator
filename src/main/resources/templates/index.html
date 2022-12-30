@@ -22,7 +22,6 @@
 </head>
 <body>
     <div align="center">
-        <h1>Invoice Generator</h1>
         <form action="#" th:action="@{/generate}" th:object="${invoice}" method="post">
             <label>Numar factura:</label>
             <input type="text" th:field="*{numarFactura}"><br/>

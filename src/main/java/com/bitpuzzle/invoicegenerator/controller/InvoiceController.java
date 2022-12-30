@@ -30,7 +30,7 @@ public class InvoiceController {
 
         List<Client> clientList = clientService.fetchClientsList();
         model.addAttribute("clientList", clientList);
-        return "index.html";
+        return "index2.html";
     }
 
     @PostMapping("/generate")
