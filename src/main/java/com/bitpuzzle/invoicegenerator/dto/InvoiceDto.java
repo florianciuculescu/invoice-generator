@@ -3,7 +3,7 @@ package com.bitpuzzle.invoicegenerator.dto;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.springframework.format.annotation.DateTimeFormat;
+
 
 import java.time.LocalDate;
 
@@ -13,7 +13,6 @@ import java.time.LocalDate;
 public class InvoiceDto {
     private String numarFactura;
 
-    @DateTimeFormat(pattern = "dd/MMM/yyyy")
     private LocalDate dataScadenta;
     private ClientDto clientDto;
     private LocalDate perioadaServiciiStart;
