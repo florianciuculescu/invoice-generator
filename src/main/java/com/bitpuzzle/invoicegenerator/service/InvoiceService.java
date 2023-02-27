@@ -36,6 +36,7 @@ public class InvoiceService {
         parameters.put("adresaClient", invoiceDto.getClientDto().getAdresaClient());
         parameters.put("numarContract", invoiceDto.getClientDto().getNumarContract());
         parameters.put("contractDinDataDe", invoiceDto.getClientDto().getContractDinDataDe());
+        parameters.put("sapId", invoiceDto.getClientDto().getSapId());
 
 
         String perioadaServicii = invoiceDto.getPerioadaServiciiStart().format(df) + " - " + invoiceDto.getPerioadaServiciiEnd().format(df);

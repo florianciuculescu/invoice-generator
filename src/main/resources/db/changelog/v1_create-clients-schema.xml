@@ -42,6 +42,9 @@
             <column name="pret_per_unitate" type="varchar(255)">
                 <constraints nullable="false"/>
             </column>
+            <column name="sap_id" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
         </createTable>
 
     </changeSet>

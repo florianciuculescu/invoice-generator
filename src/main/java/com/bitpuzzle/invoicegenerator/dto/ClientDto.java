@@ -21,5 +21,5 @@ public class ClientDto {
     private String numarContract;
     private String contractDinDataDe;
     private String pretPerUnitate;
-
+    private String sapId;
 }

@@ -52,6 +52,9 @@ public class Client {
     @Column(name = "pret_per_unitate")
     private String pretPerUnitate;
 
+    @Column(name = "sap_id")
+    private String sapId;
+
     //TODO: needs to be removed. make a dto and use the mapper
     @Override
     public String toString() {

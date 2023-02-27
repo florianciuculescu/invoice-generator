@@ -72,6 +72,7 @@
     <parameter name="dataScadenta" class="java.lang.String"/>
     <parameter name="numeClient" class="java.lang.String"/>
     <parameter name="nrRegistruClient" class="java.lang.String"/>
+    <parameter name="sapId" class="java.lang.String"/>
     <queryString>
         <![CDATA[]]>
     </queryString>
@@ -250,6 +251,14 @@ Strada VASILE ALECSANDRI, Nr. 1D, Camera 1, Judetul Ilfov]]></text>
                 <reportElement x="295" y="160" width="35" height="15" uuid="6894c6e6-15fe-48ea-b778-6b44a0396876"/>
                 <text><![CDATA[Banca:]]></text>
             </staticText>
+            <staticText>
+                <reportElement x="0" y="249" width="40" height="15" uuid="7084ca12-4d2f-4a80-afbd-052e03747282"/>
+                <text><![CDATA[SAP ID:]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="40" y="249" width="50" height="15" uuid="50996602-1cc9-4816-a0cc-48baea31aea2"/>
+                <textFieldExpression><![CDATA[$P{sapId}]]></textFieldExpression>
+            </textField>
         </band>
     </title>
     <columnHeader>

@@ -19,6 +19,7 @@
             <column name="numar_contract" value="134"/>
             <column name="contract_din_data_de" value="06.10.2022"/>
             <column name="pret_per_unitate" value="171.633"/>
+            <column name="sap_id" value="52148061"/>
         </insert>
 
     </changeSet>
