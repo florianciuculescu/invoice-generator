@@ -17,6 +17,7 @@ public class InvoiceDto {
     private ClientDto clientDto;
     private LocalDate perioadaServiciiStart;
     private LocalDate perioadaServiciiEnd;
+    private LocalDate dataEmitere;
     private Integer cantitate;
 
 }

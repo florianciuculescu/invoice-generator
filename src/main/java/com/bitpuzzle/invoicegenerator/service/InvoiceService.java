@@ -23,11 +23,10 @@ public class InvoiceService {
         Map<String, Object> parameters = new HashMap<>();
 
         DateTimeFormatter df = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-        String dataEmitere = LocalDate.now().format(df);
 
 
         parameters.put("numarFactura", invoiceDto.getNumarFactura());
-        parameters.put("dataEmitere", dataEmitere);
+        parameters.put("dataEmitere", invoiceDto.getDataEmitere().format(df));
         parameters.put("dataScadenta", invoiceDto.getDataScadenta().format(df));
         parameters.put("numeClient", invoiceDto.getClientDto().getNumeClient());
         parameters.put("nrRegistruClient", invoiceDto.getClientDto().getNrRegistruClient());
