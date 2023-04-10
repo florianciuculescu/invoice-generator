@@ -55,6 +55,7 @@ public class InvoiceService {
         parameters.put("valoare", valoare);
 
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, new JREmptyDataSource());
-        JasperExportManager.exportReportToPdfFile(jasperPrint, System.getProperty("user.home") + "\\Desktop" + "\\invoice.pdf");
+        JasperExportManager.exportReportToPdfFile(jasperPrint, System.getProperty("user.home") + File.separator + "Desktop" + File.separator + "invoice.pdf");
+
     }
 }
