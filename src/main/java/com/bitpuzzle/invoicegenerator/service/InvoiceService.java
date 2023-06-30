@@ -18,7 +18,7 @@ public class InvoiceService {
 
     public void generateInvoice(InvoiceDto invoiceDto) throws FileNotFoundException, JRException {
         //load file and compile it
-        File file = ResourceUtils.getFile("classpath:invoice.jrxml");
+        File file = ResourceUtils.getFile("classpath:invoice2.jrxml");
         JasperReport jasperReport = JasperCompileManager.compileReport(file.getAbsolutePath());
         Map<String, Object> parameters = new HashMap<>();
 

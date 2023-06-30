@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="02" author="florian">
+        <insert tableName="clients">
+            <column name="id" valueNumeric="2"/>
+            <column name="display_name" value="TotalSoft"/>
+            <column name="nume_client" value="SANOVA DIGITAL SRL"/>
+            <column name="nr_registru_client" value="J23/622/2011"/>
+            <column name="cui_client" value="RO28157367"/>
+            <column name="banca_client" value="Garanti Bank"/>
+            <column name="nr_cont_client" value="RO82UGBI0000012031506"/>
+            <column name="adresa_client" value="Ilfov, Stefanesti de Jos, Strada Parcului nr.10, Bl.C17, apt. 001
+,cam.4"/>
+            <column name="numar_contract" value="50465"/>
+            <column name="contract_din_data_de" value="03.04.2023"/>
+            <column name="pret_per_unitate" value="173.75"/>
+            <column name="sap_id" value="52148061"/>
+        </insert>
+
+    </changeSet>
+</databaseChangeLog>
