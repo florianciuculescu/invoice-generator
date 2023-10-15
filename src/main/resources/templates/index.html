@@ -202,6 +202,18 @@
       }
       }
     </style>
+    <script>
+    function showCursValutar() {
+        var clientSelect = document.querySelector('select[name="clientDto"]');
+        var cursValutarDiv = document.getElementById('curs-valutar');
+        console.log(clientSelect.value);
+        if (clientSelect.value === '2') {
+            cursValutarDiv.style.display = 'block';
+        } else {
+            cursValutarDiv.style.display = 'none';
+        }
+    }
+</script>
 </head>
 <body>
 <div class="testbox">
@@ -250,10 +262,14 @@
                 <div class="item">
                     <label>Client<span>*</span></label>
                     <br/>
-                    <select th:field="*{clientDto}">
+                    <select th:field="*{clientDto}" onchange="showCursValutar()">
                         <option value="" disabled selected>Select client</option>
                         <option th:each="c : ${clientList}" th:value="${c.id}" th:text="${c.displayName}"></option>
                     </select>
+                </div>
+                <div class="item" id="curs-valutar" style="display: none;">
+                    <label>Curs Valutar<span>*</span></label>
+                    <input type="text" th:field="*{cursValutar}"><br/>
                 </div>
                 <div class="btn-block">
                     <button type="submit" href="/">Submit</button>

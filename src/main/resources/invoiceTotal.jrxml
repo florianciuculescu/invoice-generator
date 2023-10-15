@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Invoice_real" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4eedbb89-b4f6-4469-9ab6-f642a1688cf7">
+    <property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+    <style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+    <style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+    <style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
+    <style name="Detail" mode="Transparent" fontName="Times New Roman"/>
+    <style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+        <conditionalStyle>
+            <conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+            <style mode="Opaque" backcolor="#EEEFF0"/>
+        </conditionalStyle>
+    </style>
+    <style name="Table">
+        <box>
+            <pen lineWidth="1.0" lineColor="#000000"/>
+            <topPen lineWidth="1.0" lineColor="#000000"/>
+            <leftPen lineWidth="1.0" lineColor="#000000"/>
+            <bottomPen lineWidth="1.0" lineColor="#000000"/>
+            <rightPen lineWidth="1.0" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="Table_TH" mode="Opaque" backcolor="#FFFFFF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+            <topPen lineWidth="0.5" lineColor="#000000"/>
+            <leftPen lineWidth="0.5" lineColor="#000000"/>
+            <bottomPen lineWidth="0.5" lineColor="#000000"/>
+            <rightPen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="Table_CH" mode="Opaque" backcolor="#CACED0">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+            <topPen lineWidth="0.5" lineColor="#000000"/>
+            <leftPen lineWidth="0.5" lineColor="#000000"/>
+            <bottomPen lineWidth="0.5" lineColor="#000000"/>
+            <rightPen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+    </style>
+    <style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+        <box>
+            <pen lineWidth="0.5" lineColor="#000000"/>
+            <topPen lineWidth="0.5" lineColor="#000000"/>
+            <leftPen lineWidth="0.5" lineColor="#000000"/>
+            <bottomPen lineWidth="0.5" lineColor="#000000"/>
+            <rightPen lineWidth="0.5" lineColor="#000000"/>
+        </box>
+        <conditionalStyle>
+            <conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+            <style backcolor="#D8D8D8"/>
+        </conditionalStyle>
+    </style>
+    <subDataset name="tableDataset" uuid="f13e6d36-5148-4ecc-bbe3-3035def80980">
+        <queryString>
+            <![CDATA[]]>
+        </queryString>
+    </subDataset>
+    <parameter name="adresaClient" class="java.lang.String"/>
+    <parameter name="nrContClient" class="java.lang.String"/>
+    <parameter name="bancaClient" class="java.lang.String"/>
+    <parameter name="cuiClient" class="java.lang.String"/>
+    <parameter name="perioadaServicii" class="java.lang.String"/>
+    <parameter name="numarContract" class="java.lang.String"/>
+    <parameter name="contractDinDataDe" class="java.lang.String"/>
+    <parameter name="cantitate" class="java.lang.String"/>
+    <parameter name="pretPerUnitate" class="java.lang.String"/>
+    <parameter name="valoare" class="java.lang.String"/>
+    <parameter name="numarFactura" class="java.lang.String"/>
+    <parameter name="dataEmitere" class="java.lang.String"/>
+    <parameter name="dataScadenta" class="java.lang.String"/>
+    <parameter name="numeClient" class="java.lang.String"/>
+    <parameter name="nrRegistruClient" class="java.lang.String"/>
+    <parameter name="sapId" class="java.lang.String"/>
+    <parameter name="tva" class="java.lang.String"/>
+    <parameter name="valTotal" class="java.lang.String"/>
+    <parameter name="cursValutar" class="java.lang.String"/>
+    <queryString>
+        <![CDATA[]]>
+    </queryString>
+    <title>
+        <band height="295" splitType="Stretch">
+            <staticText>
+                <reportElement x="0" y="90" width="84" height="25" uuid="57aed2b1-4f4e-40a3-a6ad-54dae8dd4c5a">
+                    <property name="local_mesure_unitheight" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <textElement>
+                    <font size="16" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Furnizor:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="0" y="115" width="120" height="15" uuid="33274f5d-5b7e-4be2-a2ff-65d452a618ed"/>
+                <text><![CDATA[BITPUZZLE S.R.L]]></text>
+            </staticText>
+            <line>
+                <reportElement x="0" y="80" width="556" height="1" uuid="806ce5df-1219-4876-ae0c-ca7405b1f246">
+                    <property name="local_mesure_unitheight" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+            </line>
+            <staticText>
+                <reportElement x="0" y="130" width="150" height="15" uuid="1d3045ed-03d6-4253-a959-aeeb491b73ca"/>
+                <text><![CDATA[Nr. registru: J23/1487/03.03.2022]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="0" y="145" width="120" height="15" uuid="235bf8b6-1e1e-49c7-b59f-7a46c30b8209"/>
+                <text><![CDATA[CUI: RO 45745740]]></text>
+            </staticText>
+            <image hAlign="Center">
+                <reportElement x="0" y="0" width="84" height="70" uuid="94883631-a913-43e2-b182-ab8d77d0181e"/>
+                <imageExpression><![CDATA["src/main/resources/static/images/LogoMakr.png"]]></imageExpression>
+            </image>
+            <textField pattern="EEEEE dd MMMMM yyyy">
+                <reportElement x="460" y="20" width="20" height="20" uuid="3836ce65-eca3-4cad-a6de-b1818def0a2b"/>
+                <textFieldExpression><![CDATA[$P{numarFactura}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="385" y="20" width="45" height="20" uuid="0b3f9342-da78-4cfa-9fc5-2301c4749678"/>
+                <box rightPadding="4"/>
+                <textElement textAlignment="Left"/>
+                <text><![CDATA[Numar:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="84" y="0" width="155" height="40" uuid="e622555d-198b-4ccd-a4a1-c59c53304058">
+                    <property name="local_mesure_unitheight" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <textElement>
+                    <font size="26" isBold="true"/>
+                </textElement>
+                <text><![CDATA[FACTURA]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="385" y="40" width="80" height="20" uuid="6e2b13d2-e73b-40ae-9eaf-6d0d2f997fdf"/>
+                <box rightPadding="4"/>
+                <textElement textAlignment="Left"/>
+                <text><![CDATA[Data emiterii:]]></text>
+            </staticText>
+            <textField pattern="EEEEE dd MMMMM yyyy">
+                <reportElement x="460" y="40" width="84" height="20" uuid="e69dc343-a844-4f37-8527-dee2c896436e"/>
+                <textFieldExpression><![CDATA[$P{dataEmitere}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="385" y="60" width="80" height="20" uuid="8f67e3b6-a7ed-4152-b28d-586f8e9a38c8"/>
+                <box rightPadding="4"/>
+                <textElement textAlignment="Left"/>
+                <text><![CDATA[Data scadenta:]]></text>
+            </staticText>
+            <textField pattern="EEEEE dd MMMMM yyyy">
+                <reportElement x="460" y="60" width="84" height="20" uuid="851f3679-ffab-445c-b497-7d24db10b469"/>
+                <textFieldExpression><![CDATA[$P{dataScadenta}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="0" y="160" width="84" height="15" uuid="de2a509a-eed0-477e-8b4b-e7ed8455fc2a"/>
+                <text><![CDATA[Banca: ING BANK]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="0" y="175" width="189" height="15" uuid="46884e12-d90a-4538-9af0-80b4d0a25962"/>
+                <text><![CDATA[Nr. cont: RO66INGB0000999912276431]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="0" y="190" width="84" height="15" uuid="effe248c-0e9e-4bb9-8c44-8aceed6e8eef"/>
+                <text><![CDATA[Moneda: RON]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="295" y="90" width="84" height="25" uuid="447e8bda-859b-4022-96c7-3595a39ce5a0">
+                    <property name="local_mesure_unitheight" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <textElement>
+                    <font size="16" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Client:]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="295" y="115" width="260" height="15" uuid="c7efb8f4-1081-44e3-b9c8-37b2cc685640"/>
+                <textFieldExpression><![CDATA[$P{numeClient}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="350" y="130" width="150" height="15" uuid="8c86235c-cce7-45ad-9525-038e667a3b15"/>
+                <textFieldExpression><![CDATA[$P{nrRegistruClient}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="320" y="145" width="120" height="15" uuid="27809e95-0312-4369-80ac-f76ae12b2a88"/>
+                <textFieldExpression><![CDATA[$P{cuiClient}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="330" y="160" width="84" height="15" uuid="b1d825da-012a-452b-bdd9-4c52246fe4b0"/>
+                <textFieldExpression><![CDATA[$P{bancaClient}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="335" y="175" width="150" height="15" uuid="9a4da94c-e821-43d7-b069-976e52fa16f4"/>
+                <textFieldExpression><![CDATA[$P{nrContClient}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="295" y="190" width="84" height="15" uuid="91f6b7fe-0988-4bdd-b232-ceb9b1fc25d1"/>
+                <text><![CDATA[Moneda: RON]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="0" y="205" width="40" height="14" uuid="c51bd197-85e9-4c68-b581-04212fff8326"/>
+                <text><![CDATA[Adresa:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="40" y="205" width="180" height="44" uuid="18f9cd61-c95b-4f71-9e59-06bf643ea3b0"/>
+                <text><![CDATA[Sat Tunari, Comuna Tunari,
+Strada VASILE ALECSANDRI, Nr. 1D, Camera 1, Judetul Ilfov]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="295" y="205" width="40" height="14" uuid="b72dc1ca-8bf8-4ac2-9a85-f09c587e973e"/>
+                <text><![CDATA[Adresa:]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="335" y="205" width="182" height="86" uuid="ea795a78-fd6c-4757-ada5-1ee874a90467"/>
+                <textFieldExpression><![CDATA[$P{adresaClient}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="385" y="0" width="35" height="20" uuid="1d986b7b-234d-4670-a377-7d0fb1390554"/>
+                <box rightPadding="4"/>
+                <textElement textAlignment="Left"/>
+                <text><![CDATA[Seria:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="84" y="40" width="155" height="40" uuid="3d7573ea-38fa-48b0-aa02-79723963c408">
+                    <property name="local_mesure_unitheight" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+                <textElement>
+                    <font size="18" isBold="true"/>
+                </textElement>
+                <text><![CDATA[BITPUZZLE S.R.L]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="460" y="0" width="55" height="20" uuid="c4386a92-e5df-41b7-a100-759cf823f2ab"/>
+                <box rightPadding="4"/>
+                <textElement textAlignment="Left"/>
+                <text><![CDATA[BTP]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="295" y="175" width="40" height="15" uuid="7fcfa879-f50a-4650-b4e4-56aaf8639c4e"/>
+                <text><![CDATA[Nr. cont:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="295" y="130" width="55" height="15" uuid="200cb5ce-5812-4e00-8a7f-83cb15d6e617"/>
+                <text><![CDATA[Nr. registru:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="295" y="145" width="25" height="15" uuid="6d8a741d-7b5f-4822-8a77-e47deb3c749b"/>
+                <text><![CDATA[CUI:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="295" y="160" width="35" height="15" uuid="6894c6e6-15fe-48ea-b778-6b44a0396876"/>
+                <text><![CDATA[Banca:]]></text>
+            </staticText>
+        </band>
+    </title>
+    <columnHeader>
+        <band height="219">
+            <rectangle>
+                <reportElement x="0" y="0" width="555" height="18" forecolor="#000000" backcolor="#0A0909" uuid="17941a71-cdff-4f73-8f6e-ba66364c748b"/>
+            </rectangle>
+            <staticText>
+                <reportElement positionType="FixRelativeToBottom" x="0" y="0" width="112" height="18" forecolor="#FFFFFF" uuid="540a2bc3-b745-42b7-85c6-8240ead47644"/>
+                <textElement verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Denumire Servicii]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="190" y="19" width="79" height="13" uuid="aa2c1895-1852-4749-84fa-e3101aec8c58"/>
+                <textFieldExpression><![CDATA[$P{numarContract}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement positionType="FixRelativeToBottom" x="518" y="0" width="37" height="18" forecolor="#FFFFFF" uuid="d47bbabe-ea76-4f35-9059-305f1460b0c4"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Valuta]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="80" y="45" width="120" height="13" uuid="26085466-d588-4daa-a9f7-c3187b2d69bc"/>
+                <textFieldExpression><![CDATA[$P{perioadaServicii}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="0" y="19" width="190" height="13" uuid="ba40ec2d-1e21-4fee-a04e-321e805e2f16"/>
+                <text><![CDATA[Prestari Servicii IT conform contractului nr.]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="0" y="32" width="61" height="13" uuid="9521871f-be97-45c7-9896-c37cec5482fd"/>
+                <text><![CDATA[din data de:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="0" y="45" width="80" height="13" uuid="f7c50e02-b8e2-4674-8015-9523f3d0c2a9"/>
+                <text><![CDATA[Perioada Servicii:]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="55" y="32" width="60" height="13" uuid="d048c014-432b-4bda-ae57-370f72a336a5"/>
+                <textFieldExpression><![CDATA[$P{contractDinDataDe}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="270" y="20" width="50" height="38" uuid="ee2c9dff-7d96-4d9d-a4a4-b0283588bd74"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$P{cantitate}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="321" y="20" width="68" height="38" uuid="fe8899d8-4279-4ac7-8d9b-5b05d43d5036"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <text><![CDATA[ora]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="390" y="20" width="67" height="38" uuid="9d35ff6c-2e13-4c10-97a0-f9a0cba9c938"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$P{pretPerUnitate}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="458" y="20" width="59" height="38" uuid="21471669-d482-4730-8005-1d8ca0170e39"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$P{valoare}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="518" y="20" width="37" height="38" uuid="5805e3f6-bd0e-41db-bd61-bb290c2118f9"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <text><![CDATA[lei]]></text>
+            </staticText>
+            <line>
+                <reportElement x="320" y="22" width="1" height="36" uuid="147af9dd-eb45-4c94-9c8c-2f543bcdff95"/>
+            </line>
+            <line>
+                <reportElement x="389" y="22" width="1" height="36" uuid="c10dafce-e581-4d39-accb-5ea61038e777"/>
+            </line>
+            <line>
+                <reportElement x="457" y="22" width="1" height="36" uuid="2d975736-0328-4aac-8aad-dfbb1e8d7631"/>
+            </line>
+            <line>
+                <reportElement x="517" y="22" width="1" height="36" uuid="45d9419f-80b7-441e-b3f2-c7d2cbbdd996"/>
+            </line>
+            <line>
+                <reportElement x="269" y="22" width="1" height="36" uuid="e08a9a63-6676-48d7-be36-71e2d9b534b9"/>
+            </line>
+            <line>
+                <reportElement mode="Transparent" x="269" y="2" width="1" height="15" forecolor="#FCFCFC" uuid="5376f901-7164-4105-956d-fbe737c6c59f"/>
+            </line>
+            <line>
+                <reportElement mode="Transparent" x="320" y="2" width="1" height="15" forecolor="#FCFCFC" uuid="a17d75cf-0d80-4465-9c69-32feded1b94b"/>
+            </line>
+            <line>
+                <reportElement mode="Transparent" x="389" y="2" width="1" height="15" forecolor="#FCFCFC" uuid="5c21b423-86e3-4feb-9ca3-9c6f47566ae2"/>
+            </line>
+            <line>
+                <reportElement mode="Transparent" x="457" y="2" width="1" height="15" forecolor="#FCFCFC" uuid="e9212c42-932d-44f7-93d8-c0d3a0e1705e"/>
+            </line>
+            <line>
+                <reportElement mode="Transparent" x="517" y="2" width="1" height="15" forecolor="#FCFCFC" uuid="d4983303-2882-4bdc-bf3f-6f3990b287a5"/>
+            </line>
+            <staticText>
+                <reportElement positionType="FixRelativeToBottom" x="458" y="0" width="59" height="18" forecolor="#FFFFFF" uuid="cc0155ea-c167-42b6-898d-e37527c061fb"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Valoare]]></text>
+            </staticText>
+            <staticText>
+                <reportElement positionType="FixRelativeToBottom" x="390" y="0" width="67" height="18" forecolor="#FFFFFF" uuid="49bc2ebd-fec7-48d7-a427-3b649cb1841c"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Pret / Unitate]]></text>
+            </staticText>
+            <staticText>
+                <reportElement positionType="FixRelativeToBottom" x="321" y="0" width="68" height="18" forecolor="#FFFFFF" uuid="8c65475d-6e82-4395-9d87-eaa0e59e1f5e"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Unit. Masura]]></text>
+            </staticText>
+            <staticText>
+                <reportElement positionType="FixRelativeToBottom" x="270" y="0" width="49" height="18" forecolor="#FFFFFF" uuid="9bef2436-4820-49f1-8a1d-2af58930fb60"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Cantitate]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="0" y="71" width="100" height="13" uuid="35685fa8-a8e1-47cc-846d-e880c01ed73c"/>
+                <text><![CDATA[Curs BNR: 1 EURO =]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="0" y="58" width="180" height="13" uuid="fe8d8855-5f06-4171-90c8-49a7e6ec29fa"/>
+                <text><![CDATA[Rata Servicii: 35€ / h]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="100" y="70" width="80" height="13" uuid="d451a884-37c7-433d-80cb-994f8545ed8d"/>
+                <textFieldExpression><![CDATA[$P{cursValutar}]]></textFieldExpression>
+            </textField>
+        </band>
+    </columnHeader>
+    <detail>
+        <band height="70">
+            <property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+        </band>
+    </detail>
+    <lastPageFooter>
+        <band height="177">
+            <staticText>
+                <reportElement positionType="Float" mode="Opaque" x="0" y="160" width="556" height="16" backcolor="#E6E8E9" uuid="36aa233d-4305-48e6-974a-1bbf89bb3c8f"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font fontName="Serif" size="9" isItalic="true"/>
+                </textElement>
+                <text><![CDATA[	Factura circula fara stampila conf art.5 al.(2) Ord. 17/2015 si art.319 al.(29) din L.227/2015 Cod Fiscal]]></text>
+            </staticText>
+            <image hAlign="Center">
+                <reportElement x="0" y="32" width="150" height="77" uuid="cb6c6abd-f54b-472d-a8a6-7cedf8d1a9dd"/>
+                <imageExpression><![CDATA["src/main/resources/static/images/signature.png"]]></imageExpression>
+            </image>
+            <staticText>
+                <reportElement x="0" y="9" width="150" height="23" uuid="2a4da55a-1ece-4d76-b454-e3124801872e"/>
+                <textElement>
+                    <font size="14"/>
+                </textElement>
+                <text><![CDATA[Semnatura furnizorului:]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="324" y="47" width="97" height="23" uuid="dda27e4a-755c-402e-b912-8ca81044374e"/>
+                <textElement>
+                    <font size="14"/>
+                </textElement>
+                <text><![CDATA[TOTAL:]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="440" y="47" width="82" height="23" uuid="33f8eb62-240a-471b-84aa-32c774a49a98"/>
+                <textElement>
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{valoare}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="0" y="124" width="210" height="15" uuid="be514b4f-1826-4fb5-a923-2380d649e9dd"/>
+                <text><![CDATA[Numele delegatului: CIUCULESCU FLORIAN]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="0" y="139" width="210" height="15" uuid="0387fba5-3643-4ef5-bea1-d7f26f9fd9ce"/>
+                <text><![CDATA[CI: RK521165  eliberat de: S.P.C.E.P. Sector 2]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="0" y="109" width="160" height="15" uuid="7711cfb9-effd-4a98-8131-a9456e08e174"/>
+                <text><![CDATA[Emis de: CIUCULESCU FLORIAN]]></text>
+            </staticText>
+            <line>
+                <reportElement x="0" y="4" width="556" height="1" uuid="9717dd5b-6f82-4b4f-957f-8a37f2b419c0">
+                    <property name="local_mesure_unitheight" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+            </line>
+            <line>
+                <reportElement x="317" y="130" width="238" height="2" uuid="0433c4a6-1f08-4b6c-a102-87848d635339">
+                    <property name="local_mesure_unitheight" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+            </line>
+            <line>
+                <reportElement x="0" y="157" width="556" height="1" uuid="175fe8ad-5818-4145-a687-150562248741">
+                    <property name="local_mesure_unitheight" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+            </line>
+            <staticText>
+                <reportElement x="324" y="70" width="97" height="23" uuid="a473f83f-da07-4582-bea5-c19e3ed72455"/>
+                <textElement>
+                    <font size="14"/>
+                </textElement>
+                <text><![CDATA[TVA (19.00%) :]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="440" y="70" width="82" height="23" uuid="8cca0d24-bf0f-42dc-bc44-291d26b7e9fd"/>
+                <textElement>
+                    <font size="14"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{tva}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="324" y="93" width="97" height="23" uuid="72c0f633-9fb8-499d-82d5-dfc47ac159df"/>
+                <textElement>
+                    <font size="14" isBold="true" isItalic="true"/>
+                </textElement>
+                <text><![CDATA[Total de plata:]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="440" y="93" width="82" height="23" uuid="fe80e315-5d54-4925-ad0d-64089f44d930"/>
+                <textElement>
+                    <font size="14" isBold="true" isItalic="true"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{valTotal}]]></textFieldExpression>
+            </textField>
+            <line>
+                <reportElement x="317" y="32" width="238" height="2" uuid="0d04cc25-446a-4724-b001-29c49e0bce29">
+                    <property name="local_mesure_unitheight" value="pixel"/>
+                    <property name="com.jaspersoft.studio.unit.height" value="px"/>
+                </reportElement>
+            </line>
+            <staticText>
+                <reportElement x="522" y="47" width="33" height="23" uuid="568c1a57-3778-449f-a922-f0cfa6b1410c"/>
+                <textElement>
+                    <font size="14"/>
+                </textElement>
+                <text><![CDATA[Lei]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="522" y="70" width="33" height="23" uuid="c6ed1ad0-cbad-4e1b-8baf-973d1b495067"/>
+                <textElement>
+                    <font size="14"/>
+                </textElement>
+                <text><![CDATA[Lei]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="522" y="93" width="33" height="23" uuid="800bb52e-a0ea-4548-affd-cf02a69c9c8a"/>
+                <textElement>
+                    <font size="14" isBold="true" isItalic="true"/>
+                </textElement>
+                <text><![CDATA[Lei]]></text>
+            </staticText>
+        </band>
+    </lastPageFooter>
+</jasperReport>

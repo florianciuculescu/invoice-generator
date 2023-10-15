@@ -19,5 +19,5 @@ public class InvoiceDto {
     private LocalDate perioadaServiciiEnd;
     private LocalDate dataEmitere;
     private Integer cantitate;
-
+    private Double cursValutar;
 }
