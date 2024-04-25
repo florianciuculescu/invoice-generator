@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<!-- Created with Jaspersoft Studio version 8.2.0.final using JasperReports Library version 6.20.3-415f9428cffdb6805c6f85bbb29ebaf18813a2ab  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Invoice_real" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4eedbb89-b4f6-4469-9ab6-f642a1688cf7">
     <property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
     <style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
@@ -158,7 +158,7 @@
                 <text><![CDATA[Banca: ING BANK]]></text>
             </staticText>
             <staticText>
-                <reportElement x="0" y="175" width="189" height="15" uuid="46884e12-d90a-4538-9af0-80b4d0a25962"/>
+                <reportElement x="0" y="175" width="200" height="15" uuid="46884e12-d90a-4538-9af0-80b4d0a25962"/>
                 <text><![CDATA[Nr. cont: RO66INGB0000999912276431]]></text>
             </staticText>
             <staticText>
@@ -180,7 +180,7 @@
                 <textFieldExpression><![CDATA[$P{numeClient}]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement x="350" y="130" width="150" height="15" uuid="8c86235c-cce7-45ad-9525-038e667a3b15"/>
+                <reportElement x="360" y="130" width="150" height="15" uuid="8c86235c-cce7-45ad-9525-038e667a3b15"/>
                 <textFieldExpression><![CDATA[$P{nrRegistruClient}]]></textFieldExpression>
             </textField>
             <textField>
@@ -192,7 +192,7 @@
                 <textFieldExpression><![CDATA[$P{bancaClient}]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement x="335" y="175" width="150" height="15" uuid="9a4da94c-e821-43d7-b069-976e52fa16f4"/>
+                <reportElement x="340" y="175" width="150" height="15" uuid="9a4da94c-e821-43d7-b069-976e52fa16f4"/>
                 <textFieldExpression><![CDATA[$P{nrContClient}]]></textFieldExpression>
             </textField>
             <staticText>
@@ -239,11 +239,11 @@ Strada VASILE ALECSANDRI, Nr. 1D, Camera 1, Judetul Ilfov]]></text>
                 <text><![CDATA[BTP]]></text>
             </staticText>
             <staticText>
-                <reportElement x="295" y="175" width="40" height="15" uuid="7fcfa879-f50a-4650-b4e4-56aaf8639c4e"/>
+                <reportElement x="295" y="175" width="45" height="15" uuid="7fcfa879-f50a-4650-b4e4-56aaf8639c4e"/>
                 <text><![CDATA[Nr. cont:]]></text>
             </staticText>
             <staticText>
-                <reportElement x="295" y="130" width="55" height="15" uuid="200cb5ce-5812-4e00-8a7f-83cb15d6e617"/>
+                <reportElement x="295" y="130" width="65" height="15" uuid="200cb5ce-5812-4e00-8a7f-83cb15d6e617"/>
                 <text><![CDATA[Nr. registru:]]></text>
             </staticText>
             <staticText>
@@ -261,7 +261,7 @@ Strada VASILE ALECSANDRI, Nr. 1D, Camera 1, Judetul Ilfov]]></text>
         </band>
     </title>
     <columnHeader>
-        <band height="93">
+        <band height="97">
             <rectangle>
                 <reportElement x="0" y="0" width="555" height="18" forecolor="#000000" backcolor="#0A0909" uuid="17941a71-cdff-4f73-8f6e-ba66364c748b"/>
             </rectangle>
@@ -273,7 +273,7 @@ Strada VASILE ALECSANDRI, Nr. 1D, Camera 1, Judetul Ilfov]]></text>
                 <text><![CDATA[Denumire Servicii]]></text>
             </staticText>
             <textField>
-                <reportElement x="189" y="19" width="21" height="13" uuid="aa2c1895-1852-4749-84fa-e3101aec8c58"/>
+                <reportElement x="120" y="32" width="40" height="13" uuid="aa2c1895-1852-4749-84fa-e3101aec8c58"/>
                 <textFieldExpression><![CDATA[$P{numarContract}]]></textFieldExpression>
             </textField>
             <staticText>
@@ -284,23 +284,24 @@ Strada VASILE ALECSANDRI, Nr. 1D, Camera 1, Judetul Ilfov]]></text>
                 <text><![CDATA[TVA]]></text>
             </staticText>
             <textField>
-                <reportElement x="80" y="45" width="120" height="13" uuid="26085466-d588-4daa-a9f7-c3187b2d69bc"/>
+                <reportElement x="84" y="58" width="155" height="13" uuid="26085466-d588-4daa-a9f7-c3187b2d69bc"/>
                 <textFieldExpression><![CDATA[$P{perioadaServicii}]]></textFieldExpression>
             </textField>
             <staticText>
-                <reportElement x="0" y="19" width="190" height="13" uuid="ba40ec2d-1e21-4fee-a04e-321e805e2f16"/>
-                <text><![CDATA[Prestari Servicii IT conform contractului nr.]]></text>
+                <reportElement x="0" y="19" width="220" height="13" uuid="ba40ec2d-1e21-4fee-a04e-321e805e2f16"/>
+                <text><![CDATA[Prestari Servicii IT - Dezvoltare Software]]></text>
             </staticText>
             <staticText>
-                <reportElement x="0" y="32" width="61" height="13" uuid="9521871f-be97-45c7-9896-c37cec5482fd"/>
+                <reportElement x="0" y="45" width="61" height="13" uuid="9521871f-be97-45c7-9896-c37cec5482fd"/>
                 <text><![CDATA[din data de:]]></text>
             </staticText>
             <staticText>
-                <reportElement x="0" y="45" width="80" height="13" uuid="f7c50e02-b8e2-4674-8015-9523f3d0c2a9"/>
+                <reportElement x="0" y="58" width="84" height="13" uuid="f7c50e02-b8e2-4674-8015-9523f3d0c2a9"/>
                 <text><![CDATA[Perioada Servicii:]]></text>
             </staticText>
             <textField>
-                <reportElement x="55" y="32" width="60" height="13" uuid="d048c014-432b-4bda-ae57-370f72a336a5"/>
+                <reportElement x="61" y="45" width="51" height="13" uuid="d048c014-432b-4bda-ae57-370f72a336a5"/>
+                <textElement textAlignment="Left"/>
                 <textFieldExpression><![CDATA[$P{contractDinDataDe}]]></textFieldExpression>
             </textField>
             <textField>
@@ -382,11 +383,11 @@ Strada VASILE ALECSANDRI, Nr. 1D, Camera 1, Judetul Ilfov]]></text>
                 <text><![CDATA[Cantitate]]></text>
             </staticText>
             <staticText>
-                <reportElement x="0" y="71" width="100" height="13" uuid="35685fa8-a8e1-47cc-846d-e880c01ed73c"/>
+                <reportElement x="0" y="84" width="100" height="13" uuid="35685fa8-a8e1-47cc-846d-e880c01ed73c"/>
                 <text><![CDATA[Curs BNR: 1 EURO =]]></text>
             </staticText>
             <staticText>
-                <reportElement x="0" y="58" width="180" height="13" uuid="fe8d8855-5f06-4171-90c8-49a7e6ec29fa"/>
+                <reportElement x="0" y="71" width="180" height="13" uuid="fe8d8855-5f06-4171-90c8-49a7e6ec29fa"/>
                 <text><![CDATA[Rata Servicii: 35€ / h]]></text>
             </staticText>
             <textField>
@@ -395,9 +396,13 @@ Strada VASILE ALECSANDRI, Nr. 1D, Camera 1, Judetul Ilfov]]></text>
                 <textFieldExpression><![CDATA[$P{tva}]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement x="100" y="70" width="80" height="13" uuid="8933c41b-b190-43b5-95f4-5850d002cfb5"/>
+                <reportElement x="100" y="84" width="80" height="13" uuid="8933c41b-b190-43b5-95f4-5850d002cfb5"/>
                 <textFieldExpression><![CDATA[$P{cursValutar}]]></textFieldExpression>
             </textField>
+            <staticText>
+                <reportElement x="0" y="32" width="120" height="13" uuid="42eb4303-9242-4bae-ac75-ff9fb74532d0"/>
+                <text><![CDATA[conform contractului nr.]]></text>
+            </staticText>
         </band>
     </columnHeader>
     <detail>
