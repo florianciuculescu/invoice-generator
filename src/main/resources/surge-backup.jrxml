@@ -89,7 +89,7 @@
                 <textElement>
                     <font size="16" isBold="true"/>
                 </textElement>
-                <text><![CDATA[Furnizor:]]></text>
+                <text><![CDATA[Supplier:]]></text>
             </staticText>
             <staticText>
                 <reportElement x="0" y="115" width="120" height="15" uuid="33274f5d-5b7e-4be2-a2ff-65d452a618ed"/>
@@ -103,7 +103,7 @@
             </line>
             <staticText>
                 <reportElement x="0" y="130" width="150" height="15" uuid="1d3045ed-03d6-4253-a959-aeeb491b73ca"/>
-                <text><![CDATA[Nr. registru: J23/1487/03.03.2022]]></text>
+                <text><![CDATA[Registry no.: J23/1487/03.03.2022]]></text>
             </staticText>
             <staticText>
                 <reportElement x="0" y="145" width="120" height="15" uuid="235bf8b6-1e1e-49c7-b59f-7a46c30b8209"/>
@@ -131,7 +131,7 @@
                 <textElement>
                     <font size="26" isBold="true"/>
                 </textElement>
-                <text><![CDATA[FACTURA]]></text>
+                <text><![CDATA[INVOICE]]></text>
             </staticText>
             <staticText>
                 <reportElement x="385" y="40" width="80" height="20" uuid="6e2b13d2-e73b-40ae-9eaf-6d0d2f997fdf"/>
@@ -489,7 +489,7 @@ Strada VASILE ALECSANDRI, Nr. 1D, Camera 1, Judetul Ilfov]]></text>
                 <textFieldExpression><![CDATA[$P{tva}]]></textFieldExpression>
             </textField>
             <staticText>
-                <reportElement x="324" y="93" width="116" height="23" uuid="72c0f633-9fb8-499d-82d5-dfc47ac159df"/>
+                <reportElement x="324" y="93" width="97" height="23" uuid="72c0f633-9fb8-499d-82d5-dfc47ac159df"/>
                 <textElement>
                     <font size="14" isBold="true" isItalic="true"/>
                 </textElement>

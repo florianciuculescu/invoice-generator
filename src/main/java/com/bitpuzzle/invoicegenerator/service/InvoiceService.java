@@ -15,7 +15,9 @@ import java.util.Map;
 
 import static constants.InvoiceConstants.HCL;
 import static constants.InvoiceConstants.INVOICE_HCL_JRXML;
+import static constants.InvoiceConstants.INVOICE_SURGE_JRXML;
 import static constants.InvoiceConstants.INVOICE_TOTAL_JRXML;
+import static constants.InvoiceConstants.SURGE;
 import static constants.InvoiceConstants.TOTAL_SOFT;
 
 @Service
@@ -64,6 +66,9 @@ public class InvoiceService {
         }
 
         double valoareCalculata = cantitate * pretPerUnitate;
+        if(clientDto.getDisplayName().equals(SURGE) && cantitate == 168) {
+            valoareCalculata = 5460;
+        }
         String valoare = formatAmounts(valoareCalculata);
 
         parameters.put("cantitate", String.valueOf(invoiceDto.getCantitate()));
@@ -83,6 +88,8 @@ public class InvoiceService {
             file = ResourceUtils.getFile("classpath:" + INVOICE_TOTAL_JRXML);
         } else if (HCL.equals(clientDto.getDisplayName())) {
             file = ResourceUtils.getFile("classpath:" + INVOICE_HCL_JRXML);
+        } else if (SURGE.equals(clientDto.getDisplayName())) {
+            file = ResourceUtils.getFile("classpath:" + INVOICE_SURGE_JRXML);
         } else {
             throw new RuntimeException("No Client Selected !!! ");
         }

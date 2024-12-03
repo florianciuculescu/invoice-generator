@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="03" author="florian">
+        <insert tableName="clients">
+            <column name="id" valueNumeric="3"/>
+            <column name="display_name" value="Surge"/>
+            <column name="nume_client" value="Surge S.R.L"/>
+            <column name="nr_registru_client" value="-------"/>
+            <column name="cui_client" value="03729601207"/>
+            <column name="banca_client" value="UNICREDIT BANK"/>
+            <column name="nr_cont_client" value="----------"/>
+            <column name="adresa_client" value=" Via Guelfa 5, 40138 Bologna, BO (Italy) "/>
+            <column name="numar_contract" value="27-04-2024"/>
+            <column name="contract_din_data_de" value="01.04.2023"/>
+            <column name="pret_per_unitate" value="32.5"/>
+            <column name="sap_id" value="52148061"/>
+        </insert>
+
+    </changeSet>
+</databaseChangeLog>
