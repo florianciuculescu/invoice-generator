@@ -67,7 +67,7 @@ public class InvoiceService {
 
         double valoareCalculata = cantitate * pretPerUnitate;
         if(clientDto.getDisplayName().equals(SURGE) && cantitate == 168) {
-            valoareCalculata = 5460;
+            valoareCalculata = 5733;
         }
         String valoare = formatAmounts(valoareCalculata);
 
@@ -75,7 +75,7 @@ public class InvoiceService {
         parameters.put("pretPerUnitate", String.valueOf(pretPerUnitate));
         parameters.put("valoare", valoare);
 
-        double valTva = valoareCalculata * 0.19;
+        double valTva = valoareCalculata * 0.21;
         parameters.put("tva", formatAmounts(valTva));
         parameters.put("valTotal", formatAmounts(valoareCalculata + valTva));
 

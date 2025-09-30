@@ -479,7 +479,7 @@ Strada VASILE ALECSANDRI, Nr. 1D, Camera 1, Judetul Ilfov]]></text>
                 <textElement>
                     <font size="14"/>
                 </textElement>
-                <text><![CDATA[TVA (19.00%) :]]></text>
+                <text><![CDATA[TVA (21.00%) :]]></text>
             </staticText>
             <textField>
                 <reportElement x="440" y="70" width="82" height="23" uuid="8cca0d24-bf0f-42dc-bc44-291d26b7e9fd"/>
